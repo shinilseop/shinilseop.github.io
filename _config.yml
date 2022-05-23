@@ -103,19 +103,19 @@ analytics: # 블로그 접근 경로 확인 코드
 
 # Site Author / 사이드바 소개 부분
 author:
-  name             : "닉네임"
-  avatar           : "/assets/images/profile.jpg"
-  bio              : "간단한 글귀"
-  location         : "사는 지역"
+  name             : "신일섭"
+  avatar           : "/assets/images/mylogo.jpg"
+  bio              : "백엔드 개발자 이빈다."
+  location         : "대한민국/천안"
   
   links:
-    - label: "Email"
+    - label: "shinilseop12@gmail.com"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:shinilseop12@gmail.com"
-    - label: "GitHub"
+    - label: "https://github.com/shinilseop"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/shinilseop"
-    - label: "Instagram"
+    - label: "ssub__i"
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/ssub__i"
     #- label: "Website"
