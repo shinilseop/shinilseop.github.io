@@ -1,5 +1,5 @@
 ---
-title: "Containers/Docker"
+title: "Container/Docker"
 layout: archive
 permalink: categories/docker
 author_profile: true
