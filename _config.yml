@@ -16,16 +16,16 @@ minimal_mistakes_skin    : "myskin" # "default"  "air", "aqua", "contrast", , "d
 
 # Site Settings
 locale                   : "ko-KR" # 블로그 사용 언어
-title                    : "블로그 타이틀" # 블로그 타이틀
+title                    : "Sseop" # 블로그 타이틀
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "블로그 유저 닉네임"
-description              : "블로그 간단 설명"
+name                     : "Sseop"
+description              : "써비의 블로그"
 url                      : "https://shinilseop.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "shinilseop/comments" #댓글 경로 / github name/repository
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "/assets/images/logo.png" # 타이틀 옆 로고
+logo                     : "/assets/images/computer.png" # 타이틀 옆 로고
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
@@ -42,7 +42,7 @@ comments: # 블로그 댓글 활용
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
   utterances:
-    theme                : "github-light" # "github-light" (default), "github-dark"
+    theme                : "github-dark" # "github-light" (default), "github-dark"
     issue_term           : "pathname" # "pathname" (default)
   staticman:
     branch               : # "master"
