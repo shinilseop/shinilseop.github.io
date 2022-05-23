@@ -21,9 +21,9 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "블로그 유저 닉네임"
 description              : "블로그 간단 설명"
-url                      : "https://유저이름.github.io"
+url                      : "https://shinilseop.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "유저이름/comments" #댓글 경로 / github name/repository
+repository               : "shinilseop/comments" #댓글 경로 / github name/repository
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/logo.png" # 타이틀 옆 로고
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -111,13 +111,13 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:이메일주소@gmail.com"
+      url: "mailto:shinilseop12@gmail.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/유저이름"
+      url: "https://github.com/shinilseop"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://www.instagram.com/인스타 아이디"
+      url: "https://www.instagram.com/ssub__i"
     #- label: "Website"
     #  icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -134,7 +134,7 @@ footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/유저이름"
+      url: "https://github.com/shinilseop"
     #- label: "Twitter"
     #  icon: "fab fa-fw fa-twitter-square"
       # url:
