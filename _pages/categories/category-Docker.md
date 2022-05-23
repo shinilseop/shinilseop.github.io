@@ -1,7 +1,7 @@
 ---
 title: "Containers/Docker"
 layout: archive
-permalink: categories/Containers/Docker
+permalink: categories/docker
 author_profile: true
 sidebar_main: true
 ---
