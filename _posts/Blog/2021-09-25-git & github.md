@@ -1,25 +1,22 @@
 ---
-title:  "chapter 1 첫 게시물 예시" 
-excerpt: "첫 게시물 예시"
+title:  "Docker File"
+excerpt: "Docker file study"
 
 categories:
-  - Blog
+  - Containers
 tags:
-  - [Blog, Git, Github,]
+  - [Docker, Kubernetes, K8s, Container]
 
 toc: true
 toc_sticky: true
  
-date: 2020-09-25
-last_modified_at: 2020-09-25
+date: 2022-05-23
+last_modified_at: 2022-05-23
 
 ---
 
+## 이것은 도커파일 공부 입니다.
 
-## 위 형식을 참고하여 블로그를 커스텀하시오
+## 이것은 도커파일 공부 2 입니다.
 
-`-` 게시물 업로드 양식
-
-## 위 형식을 참고하여 블로그를 커스텀하시오
-
-게시물 업로드 양식
+## 이것은 도커파일 공부 3 입니다.

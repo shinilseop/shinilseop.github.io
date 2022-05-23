@@ -14,6 +14,9 @@
                     {% if category[0] == "Blog" %}
                         <li><a href="/categories/blog" class="">Blog Dev({{category[1].size}})</a></li>
                     {% endif %}
+                    {% if category[0] == "Containers" %}
+                        <li><a href="/categories/Containers" class="">Containers({{category[1].size}})</a></li>
+                    {% endif %}
                 {% endfor %}
             </ul>
       </li>
