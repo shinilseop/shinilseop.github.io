@@ -1,6 +1,6 @@
 ---
-title:  "Docker File"
-excerpt: "Docker file study"
+title:  "Dockerfile"
+excerpt: "Dockerfile study"
 
 categories:
   - Docker
