@@ -8,14 +8,11 @@
             📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
-        <span class="nav__sub-title">etc</span>
+        <span class="nav__sub-title">Containers</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Blog" %}
-                        <li><a href="/categories/blog" class="">Blog Dev({{category[1].size}})</a></li>
-                    {% endif %}
-                    {% if category[0] == "Containers" %}
-                        <li><a href="/categories/Containers" class="">Containers({{category[1].size}})</a></li>
+                    {% if category[0] == "Docker" %}
+                        <li><a href="/categories/Docker" class="">Containers({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

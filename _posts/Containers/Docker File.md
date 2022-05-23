@@ -3,7 +3,7 @@ title:  "Docker File"
 excerpt: "Docker file study"
 
 categories:
-  - Containers
+  - Docker
 tags:
   - [Docker, Kubernetes, K8s, Container]
 
