@@ -1,26 +1,74 @@
 {% assign sum = site.posts | size %}
 
 <nav class="nav__list">
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
-  <ul class="nav__items" id="category_tag_menu">
-      <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
-      </li>
-      <li>
-        <span class="nav__sub-title">Container</span>
+    <input id="ac-toc" name="accordion-toc" type="checkbox" />
+    <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
+    <ul class="nav__items" id="category_tag_menu">
+        <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span
+                    style="font-family:'Coming Soon';">{{sum}}</style> <span
+                        style="font-family:'Cafe24Oneprettynight';">개</style>
+        </li>
+        <li>
+            <span class="nav__sub-title">JAVA</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Docker" %}
-                        <li><a href="/categories/docker" class="">Docker({{category[1].size}})</a></li>
-                    {% endif %}
+                {% if category[0] == "JAVA" %}
+                <li><a href="/categories/java" class="">JAVA({{category[1].size}})</a></li>
+                {% endif %}
+            </ul>
+            <span class="nav__sub-title">Spring</span>
+            <ul>
+                {% if category[0] == "Spring" %}
+                <li><a href="/categories/spring" class="">Spring({{category[1].size}})</a></li>
+                {% endif %}
                 {% endfor %}
             </ul>
-      </li>
-      <li>	
-            <br>      
+            <span class="nav__sub-title">Container</span>
+            <ul>
+                {% for category in site.categories %}
+                {% if category[0] == "Docker" %}
+                <li><a href="/categories/docker" class="">Docker({{category[1].size}})</a></li>
+                {% endif %}
+                {% if category[0] == "Kubernetes" %}
+                <li><a href="/categories/kubernetes" class="">Kubernetes({{category[1].size}})</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            <span class="nav__sub-title">AI</span>
+            <ul>
+                {% for category in site.categories %}
+                {% if category[0] == "SKLearn" %}
+                <li><a href="/categories/sklearn" class="">SKLearn({{category[1].size}})</a></li>
+                {% endif %}
+                {% if category[0] == "MLOps" %}
+                <li><a href="/categories/mlops" class="">MLOps({{category[1].size}})</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            <span class="nav__sub-title">OS</span>
+            <ul>
+                {% for category in site.categories %}
+                {% if category[0] == "Linux" %}
+                <li><a href="/categories/linux" class="">Linux({{category[1].size}})</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            <span class="nav__sub-title">Algorithm</span>
+            <ul>
+                {% for category in site.categories %}
+                {% if category[0] == "Sorting" %}
+                <li><a href="/categories/sorting" class="">Sorting({{category[1].size}})</a></li>
+                {% endif %}
+                {% if category[0] == "BOJ" %}
+                <li><a href="/categories/boj" class="">BOJ({{category[1].size}})</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+        <li>
+            <br>
             <!-- <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fheoni00.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"> -->
-      </li>
-  </ul>
+        </li>
+    </ul>
 </nav>
-
