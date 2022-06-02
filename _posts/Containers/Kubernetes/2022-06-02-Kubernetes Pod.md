@@ -98,12 +98,14 @@ spec:
 - YAML 파일에서 대시(-) 항목은 여러 개를 만들 수 있음을 의미한다.
   - 위에서의 spec.containers.name 과 같은 예시
   
-- kubectl apply 생성하고 컨테이너의 배시로 접근한다.
 ```
 kubectl apply -f nginx-pod-with-ubuntu.yaml
 kubectl exec -it my-nginx-pod -c ubuntu-sidecar-container bash
 # kubectl exec -it {pod} -c {container} bash
+
+curl localhost
 ```
+- kubectl apply 생성하고 컨테이너의 배시로 접근한다.
 - 우분투 컨테이너에 접근해서 같은 Pod의 다른 컨테이너가 열고 있는 nginx에 접근해보면 접근이 가능하다. 다만, 접근할때 localhost를 이용해서 접근해보자.
 ![my-nginx-pod describe](../../../assets/images/container/kubenetes/ubuntu-nginx-access.png)
 - 도커를 사용할때와는 뭔가 이상한 네트워킹이라는 것이 느껴질 것이다. Pod 내의 컨테이너들이 네트워크 네임스페이스를 공유해서 사용하기 때문에 일어나는 현상이다.
