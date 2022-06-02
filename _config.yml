@@ -21,7 +21,7 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Sseop"
 description              : "써비의 블로그"
-url                      : "https://shinilseop.github.io"
+url                      : "https://shinilseop.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "shinilseop/comments" #댓글 경로 / github name/repository
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
