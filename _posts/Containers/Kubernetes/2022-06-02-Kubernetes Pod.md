@@ -5,7 +5,7 @@ excerpt: "Kubernetes Pod Notion, Example"
 categories:
   - Kubernetes
 tags:
-  - [Container, Kubernetes, Pod]
+  - [Container, Kubernetes, Object, Resource, Pod]
 
 toc: true
 toc_sticky: true
