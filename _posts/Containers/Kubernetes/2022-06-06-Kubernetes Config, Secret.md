@@ -60,7 +60,7 @@ last_modified_at: 2022-06-06
     - 만약, nginx.conf 등의 파일을 통해 설정값을 읽어 들인다면 이 방법을 사용하는 것이 좋음
 - 컨피그맵의 데이터를 컨테이너의 환경 변수로 가져오기
 
-```bash
+```jsx
 apiVersion: v1
 kind: Pod
 metadata:
@@ -83,7 +83,7 @@ spec:
 
 - 컨피그맵에서 선택적으로 변수를 가져오기
 
-```bash
+```jsx
 apiVersion: v1
 kind: Pod
 metadata:
@@ -110,7 +110,7 @@ spec:
 
 - 컨피그맵의 내용을 파일로 포드 내부에 마운트하기
 
-```bash
+```jsx
 apiVersion: v1
 kind: Pod
 metadata:
@@ -136,7 +136,7 @@ spec:
 
 - 선택적으로 볼륨에 마운트 시키기
 
-```bash
+```jsx
 apiVersion: v1
 kind: Pod
 metadata:
@@ -169,7 +169,7 @@ spec:
 - 여러 번 사용해서 여러 개의 파일을 컨피그맵에 저장하는 것도 가능
 - `kubectl create configmap {컨피그맵-이름} —from-file {파일 이름} …ㄷ`
 
-```bash
+```jsx
 # index.html
 
 Hello, world
@@ -180,7 +180,7 @@ Hello, world
 
 - env 파일을 활용해서 만들기
 
-```bash
+```jsx
 # multiple-keyvalue.env
 
 mykey1=myvalue1
@@ -212,7 +212,7 @@ mykey3=myvalue3
     - 기본적인 시크릿 파일 생성방법
 - 여러 개의 환경을 설정하기
 
-```bash
+```jsx
 echo mypassword > pw1 %% echo yourpassword > pw2
 kubectl create secret generic our-password --from-file pw1 --from-file pw2
 ```
@@ -229,7 +229,7 @@ kubectl create secret generic our-password --from-file pw1 --from-file pw2
 
 - 생성된 시크릿을 포드에 적용시키기
 
-```bash
+```jsx
 # env-from-secret.yaml
 
 apiVersion: v1
@@ -248,7 +248,7 @@ spec:
 
 - 선택적으로 가져와서 적용시키기
 
-```bash
+```jsx
 # selective-env-from-secret.yaml
 
 apiVersion: v1
@@ -270,7 +270,7 @@ spec:
 
 - 시크릿 파일을 볼륨으로 마운트 시키기
 
-```bash
+```jsx
 # volume-mount-secret.yaml
 
 apiVersion: v1
@@ -294,7 +294,7 @@ spec:
 
 - 선택적으로 가져와서 마운트 시키기
 
-```bash
+```jsx
 # selective-mount-secret.yaml
 
 apiVersion: v1
@@ -335,7 +335,7 @@ spec:
 - 쿠버네티스에서는 로그인 대신 레지스트리 인증 정보를 저장하는 별도의 시크릿을 생성해 사용
     1. docker login 명령어로 로그인에 성공했을 때 도커 엔진이 자동으로 생성하는 ~/.docker/config.json 파일을 사용하는 것
         
-        ```bash
+        ```jsx
         kubectl create secret generic registry-auth \
         --from-file=.dockerconfigjson=/root/.docker/config.json \
         --type=kubernetes.io/dockerconfigjson
@@ -343,7 +343,7 @@ spec:
         
     2. 시크릿을 생성하는 명령어에서 직접 로그인 인증 정보를 명시할 수도 있음. 각 옵션에 적절한 인자를 입력하면 되며, —docker-username과 —docker-password 옵션은 필수
         
-        ```bash
+        ```jsx
         kubectl create secret docker-registry registry-auth-by-cmd \
         --docker-username=alicek106 \
         --docker-password=1q2w3e4r
@@ -353,7 +353,7 @@ spec:
         
 - YAML 파일에서 생성한 시크릿을 통해 인증해서 이미지를 Pull 하는 법
 
-```bash
+```jsx
 apiVersion: apps/v1
 kind: Deployment
 ...
@@ -365,7 +365,7 @@ kind: Deployment
 			- name: {secret-name}
 ```
 
-```bash
+```jsx
 🗒️
 기본적으로는 워커 서버에 이미지가 존재하지 않을 때만 이미지를 받아오도록 설정돼 있지만, 
 imagePullPolicy 항목을 수정하여 이미지를 받아오는 설정을 변경 가능
@@ -381,7 +381,7 @@ imagePullPolicy 항목을 수정하여 이미지를 받아오는 설정을 변�
 
 1. 보안 연결에 사용할 키 페어 준비
     
-    ```bash
+    ```jsx
     $ openssl req -new -newkey rsa:4096 -days 365 -nodes \
     -x509 -subj "/CN=example.com" -keyout cert.key -out cert.crt # 키 페어 생성
     
@@ -403,7 +403,7 @@ imagePullPolicy 항목을 수정하여 이미지를 받아오는 설정을 변�
 - 앞서 시크릿을 생성하기 위해 CLI를 통해서 생성했지만, 이를 YAML 파일로 배포하려면 시크릿의 데이터를 YAML 파일에 함께 저장해 둬야 함
 - dry run 명령어를 통해 출력되는 YAML 파일 내용을 저장해 사용할 수도 있음
 
-```bash
+```jsx
 apiVersion: v1
 data:
   tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVxRENDQXBBQ0NRRHUwNTVhN3JuRV
@@ -452,7 +452,7 @@ type: kubernetes.io/tls
 - kubectl 1.14 버전부터 사용할 수 있는 기능으로 자주 사용되는 YAML 파일의 속성을 별도로 정의해 재사용하거나 여러 YAML 파일을 하나로 묶는 등 다양한 용도로 사용할 수 있는 기능
 - 지금은 시크릿과 컨피그맵을 좀 더 쉽게 쓰기 위한 용도로 kustomize를 간단히 사용
 
-```bash
+```jsx
 # kustomization.yaml
 
 serectGenerator:
@@ -467,7 +467,7 @@ serectGenerator:
 - kustomize 에서 시크릿 생성하기
     - `kubectl kustomize ./`
     
-    ```bash
+    ```jsx
     apiVersion: v1
     data:
       tls.crt: |
@@ -485,7 +485,7 @@ serectGenerator:
 
 - kustomizer 를 통해서 컨피그맵 만들기
 
-```bash
+```jsx
 # kustomization.yaml
 
 configMapGenerator:
@@ -497,7 +497,7 @@ configMapGenerator:
 
 - 시크릿맵과 비슷한데 type이 없으므로 type만 제거하고 작성하고 정의하면 됨
 
-```bash
+```jsx
 🗒️ Note!
 kustomize로부터 생성된 컨피그맵이나 시크릿의 이름 뒤에는 추출된 해시값이 자동으로 추가됨.
 kubectl 명령어로 생성할 때에도 해쉬 값을 추가하고 싶다면 --append-hash 를 추가로 붙이면 가능
@@ -524,7 +524,7 @@ kubectl create secret tls kustomize-secret \
 
 - 리소스 정리
 
-```bash
+```jsx
 kubectl delete deployment --all
 kubectl delete pod --all
 kubectl delete configmap --all
