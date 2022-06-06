@@ -22,7 +22,7 @@ last_modified_at: 2022-06-03
 
 ## nginx 예제
 
-```
+```yaml
 # deployment-nginx.yaml
 
 apiVersion: apps/v1
@@ -49,7 +49,7 @@ spec:
 
 - 레플리카 셋과 거의 동일하고 kind만 바뀜
 
-```
+```bash
 kubectl apply -f deployment-nginx.yaml
 ```
 
@@ -64,13 +64,13 @@ kubectl apply -f deployment-nginx.yaml
 
 - 아래의 명령어를 통해서 현재 상태를 기록
 
-```
+```bash
 kubectl apply -f deployment-nginx.yaml --record
 ```
 
 - 현재 nginx의 이미지를 1.10 → 1.11 로 변경하고 —record 옵션을 통해서 기록
 
-```
+```bash
 kubectl set image deployment my-nginx-deployment nginx=nginx:1.11 --record
 ```
 
@@ -81,7 +81,7 @@ kubectl set image deployment my-nginx-deployment nginx=nginx:1.11 --record
 
 - rollout history를 통해 여때 까지 기록된 revision들을 볼 수있음
 
-```
+```bash
 kubectl rollout history deployment my-nginx-deployment
 ```
 
@@ -90,7 +90,7 @@ kubectl rollout history deployment my-nginx-deployment
 
 - rollout undo 명령어와 —to-revision={version} 옵션을 통해 버전 다운 가능
 
-```
+```bash
 kubectl rollout undo deployment my-nginx-deployment --to-revision=1
 ```
 
@@ -104,7 +104,7 @@ kubectl rollout undo deployment my-nginx-deployment --to-revision=1
 - 이를 이용한 다양한 배포 전략을 실현 가능
 
 - 마무리
-```
+```bash
 # 사용한 리소스 정리
 kubectl delete deployment,pods,rs --all
 ```

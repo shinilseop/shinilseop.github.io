@@ -81,7 +81,7 @@ kube-dns   ClusterIP   10.96.0.10   <none>        53/UDP,53/TCP,9153/TCP   3h38m
         ```
         
 
-```bash
+```yaml
 # production-namespace.yaml
 
 apiVersion: v1
@@ -96,7 +96,7 @@ metadata:
 
 - 특정 네임스페이스에 리소스 생성하기
 
-```bash
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:

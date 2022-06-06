@@ -26,7 +26,7 @@ Pod은 도커에서의 컨테이너, 도커 스웜에서의 서비스와 같이 
 참고로 YAML 파일을 작성할 때 tab으로 띄우게 된다면 도커에서와 마찬가지로 인식을 하지 못하기 때문에 에러가난다. VSCode 같은 에디터로 tab을 공백으로 변환해주는 것을 사용하거나 공백 2칸을 이용해서 구분하자.
 
 ## nginx 생성 예제
-```
+```yaml
 # nginx-pod.yaml
 
 apiVersion: v1
@@ -55,7 +55,7 @@ spec:
   - 리소스 생성을 위한 자세한 정보를 입력한다.
   - Pod에서 실행될 container를 만들 image를 명시하고 사용할 포트나 프로토콜에 대해 입력했다.
 - 실행 : -f 로 실행할 yaml 파일을 명시해서 실행할 수 있다.
-```
+```bash
 kubectl apply -f nginx-pod.yaml
 ```
 - kubectl get {resource} 명령어를 통해 생성된 리소스를 확인할 수 있다.
@@ -65,7 +65,7 @@ kubectl apply -f nginx-pod.yaml
 - kubectl describe {resource} {resource-name} 을 통해 리소스의 자세한 정보를 알수있다.
 ![my-nginx-pod describe](../../../assets/images/container/kubenetes/kubectl-describe-pods-mynginxpod.png)
 - 삭제
-```
+```bash
 kubectl delete -f {file}
 kubectl delete {resource} {resource-name}
 ```
@@ -76,7 +76,7 @@ kubectl delete {resource} {resource-name}
   - nginx 컨테이너 외에 설정 파일의 변경사항을 갱신해주는 설정 리로더, 로그를 수집해주는 프로세스 등 함께 실행되는 부가적인 컨테이너를 "사이드카 컨테이너"라고 부른다.
 
 ## 네트워크 네임스페이스 공유 예시
-```
+```yaml
 # nginx-pod-with-ubuntu.yaml
 
 apiVersion: v1
@@ -98,7 +98,7 @@ spec:
 - YAML 파일에서 대시(-) 항목은 여러 개를 만들 수 있음을 의미한다.
   - 위에서의 spec.containers.name 과 같은 예시
   
-```
+```bash
 kubectl apply -f nginx-pod-with-ubuntu.yaml
 kubectl exec -it my-nginx-pod -c ubuntu-sidecar-container bash
 # kubectl exec -it {pod} -c {container} bash

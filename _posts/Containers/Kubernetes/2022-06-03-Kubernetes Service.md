@@ -43,7 +43,7 @@ last_modified_at: 2022-06-03
 
 ## ClusterIP
 
-```bash
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -98,7 +98,7 @@ spec:
 
 ## NodePort
 
-```bash
+```yaml
 # hostname-svc-nodeport.yaml
 
 apiVersion: v1
@@ -133,7 +133,7 @@ $gcloud compute firewall-rules delete temp-nodeport-svc # 삭제
 
 - 각 노드에서 개방되는 포트는 기본적으로  30000~32768 포트 중에 랜덤으로 선택되지만, YAML 파일에 nodePort 항목을 정의하면 원하는 포트 선택 가능
 
-```bash
+```yaml
 ...
 spec:
   ports:
@@ -157,7 +157,7 @@ spec:
 - 특정 클라이언트가 같은 포드로부터만 처리되게 하려면 서비스의 YAML 파일에서
 - sessionAffinity 항목을 ClientIP로 설정
 
-```bash
+```yaml
 ...
 spec:
 	sessionAffinity: ClientIP
@@ -177,7 +177,7 @@ spec:
 - 단, 로드밸런서의 경우 로드 밸런서를 동적으로 생성하는 기능을 제공하는 환경에서만 사용할 수 있음
 - 일반적으로 AWS, GCP 등과 같은 클라우드 플랫폼 환경에서만 로드밸런서를 사용 가능하며 가상머신이나 온프레미스 환경에서는 사용하기 어려울 수 있음 (MetalLB, 오픈스택의 LBaaS 등과 같이 온프레미스에서도 가능하게 하는 방법들이 존재하긴 함)
 
-```bash
+```yaml
 # hostname-svc-lb.yaml
 
 apiVersion: v1
@@ -221,7 +221,7 @@ spec:
 - 로드밸런서 타입으로 생성했지만, NodePort의 간접적인 기능 또한 자동으로 사용할 수 있는 셈
 - 또한, 클라우드 로드밸런서의 유형을 바꿔서 생성할 수도 있음
 
-```bash
+```yaml
 ...
 apiVersion: v1
 kind: Service
@@ -262,7 +262,7 @@ A로 요청이 들어왔지만 로드밸런서에 의해 B로 전송되는 모�
 - kubectl get -o yaml 명령어를 통해 서비스의 모든 속성을 출력해 볼 수 있음.
     - `kubectl get svc hostnamesvc-nodeport -o yaml`
 
-```bash
+```yaml
 # kubectl get svc hostnamesvc-nodeport -o yaml
 
 apiVersion: v1
@@ -284,7 +284,7 @@ metadata:
 - 쿠버네티스를 외부 시스템과 연동해야 할 때가 생길 수도 있음
 - 서비스가 외부 도메인을 가르키도록 설정하는 방법
 
-```bash
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -307,7 +307,7 @@ spec:
     - `kubectl edit configmap -n kube-system kube-proxy`
     - 변경하는 이유 : 쿠버네티스 1.14.2 버전부터 kube-proxy IPVS mode를 사용하려면 strictARP모드를 켜줘야 함. 기본적으로 strictARP를 활성화 하기 때문에 kube-router를 서비스 프록시로 사용하는 경우에는 필요하지 않음.
 
-```bash
+```yaml
 apiVersion: kubeproxy.config.k8s.io/v1alpha1
 kind: KubeProxyConfiguration
 mode: "ipvs"
@@ -363,7 +363,7 @@ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.12.1/manif
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
 ```
 
-```bash
+```yaml
 # 라우팅 처리를 위한 configmap 생성
 
 apiVersion: v1
