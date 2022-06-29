@@ -46,6 +46,9 @@
                 {% if category[0] == "MLOps" %}
                 <li><a href="/categories/mlops" class="">MLOps({{category[1].size}})</a></li>
                 {% endif %}
+                {% if category[0] == "ML" %}
+                <li><a href="/categories/ml" class="">ML({{category[1].size}})</a></li>
+                {% endif %}
                 {% endfor %}
             </ul>
             <span class="nav__sub-title">OS</span>
